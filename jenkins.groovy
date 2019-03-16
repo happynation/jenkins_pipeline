@@ -1,6 +1,5 @@
 node {
-    properties([parameters([string(defaultValue: '127.0.0.1', description: 'Please enter IP to host Website', name: 'DEVIP', trim: true)])]),properties([pipelineTriggers([pollSCM('* * * * *')])])
-    stage ("Pull git"){
+properties([parameters([string(defaultValue: '127.0.0.1', description: 'please', name: 'DEVIP', trim: true)]), pipelineTriggers([pollSCM('* * * * *')])])    stage ("Pull git"){
     git "git@github.com:vovatran1993/website.git"
     }
     stage("Install apache"){
